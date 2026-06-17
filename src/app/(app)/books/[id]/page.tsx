@@ -13,6 +13,7 @@ import { StatusBadge, TagBadge } from '@/components/ui/Badge'
 import StarRating from '@/components/ui/StarRating'
 import Modal from '@/components/ui/Modal'
 import BookForm from '@/components/books/BookForm'
+import ExportButton from '@/components/books/ExportButton'
 import ChapterCard from '@/components/chapters/ChapterCard'
 import ChapterForm from '@/components/chapters/ChapterForm'
 import QuoteCard from '@/components/quotes/QuoteCard'
@@ -220,7 +221,8 @@ export default function BookDetailPage() {
                 <h1 className="text-xl lg:text-2xl font-bold text-text-primary leading-tight">{book.titre}</h1>
                 <p className="text-text-secondary mt-1">{book.auteur}</p>
               </div>
-              <div className="flex gap-2 flex-shrink-0">
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <ExportButton bookId={id} bookTitle={book.titre} />
                 <button
                   onClick={() => setEditBookOpen(true)}
                   className="p-2 text-text-secondary hover:text-accent hover:bg-accent-muted rounded-lg transition-all"
